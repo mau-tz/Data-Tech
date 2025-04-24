@@ -1,5 +1,5 @@
 #pragma once
-
+#include "MyForm.h"
 namespace Datatech {
 
 	using namespace System;
@@ -14,10 +14,20 @@ namespace Datatech {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+
+		Graphics^ canvas;
+		BufferedGraphicsContext^ context;
+		BufferedGraphics^ buffer;
+
 	public:
 		MyForm(void)
 		{
+			
+			
 			InitializeComponent();
+			canvas = this->CreateGraphics();
+			context = BufferedGraphicsManager::Current;
+			buffer = context->Allocate(canvas, this->ClientRectangle);
 			//
 			//TODO: Add the constructor code here
 			//
