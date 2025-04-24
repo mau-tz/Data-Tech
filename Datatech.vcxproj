@@ -113,11 +113,15 @@
   <ItemGroup>
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Empresa.h" />
+    <ClInclude Include="Matriz.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Matriz.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Principal.cpp" />
   </ItemGroup>
@@ -129,6 +133,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Matriz.resx">
+      <DependentUpon>Matriz.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
