@@ -11,13 +11,16 @@ private:
 	float porcentajeObjetivo;
 public:
 	Empresa(int cantidad, float objetivo) : N(cantidad), porcentajeObjetivo(objetivo){}
-	void generarConexion(int id1, int id2) {
+	void inicializarEmpleados(int n) {
+		// Inicializa los empleados
+	}
+	void generarMatrizConexion() {
 		// Genera una conexión entre dos empleados
 	}
-	void simularContagio(int id) {
+	int simularContagio(int inicio, float procentaje) {
 		// Simula el contagio de un empleado
 	}
-	float calcularPorcentajeContagiados() {
+	int calcularDiasParaPorcentaje(float y) {
 		// Calcula el porcentaje de empleados contagiados
 	}
 };
