@@ -61,7 +61,7 @@ namespace Datatech {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(116, 83);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Agregar cantidad de empleados (60-120)";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -71,7 +71,7 @@ namespace Datatech {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(116, 77);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"button2";
+			this->button2->Text = L"Salir del programa";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// MyForm

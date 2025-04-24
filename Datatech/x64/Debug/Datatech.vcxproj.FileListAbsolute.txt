@@ -1,0 +1,3 @@
+D:\Documentos\GitHub\Data-Tech#\Datatech\x64\Debug\Datatech.vcxproj.AssemblyReference.cache
+D:\Documentos\GitHub\Data-Tech#\Datatech\x64\Debug\Datatech.MyForm.resources
+D:\Documentos\GitHub\Data-Tech#\Datatech\x64\Debug\Datatech.vcxproj.GenerateResource.cache
