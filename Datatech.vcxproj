@@ -81,6 +81,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <EntryPointSymbol>main</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -123,7 +125,6 @@
   <ItemGroup>
     <ClCompile Include="Matriz.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="Principal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

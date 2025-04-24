@@ -1,5 +1,7 @@
 #pragma once
 #include "MyForm.h"
+#include "Matriz.h"
+
 namespace Datatech {
 
 	using namespace System;
@@ -17,13 +19,11 @@ namespace Datatech {
 
 		Graphics^ canvas;
 		BufferedGraphicsContext^ context;
-		BufferedGraphics^ buffer;
+
+		   BufferedGraphics^ buffer;
 
 	public:
-		MyForm(void)
-		{
-			
-			
+		MyForm(void){
 			InitializeComponent();
 			canvas = this->CreateGraphics();
 			context = BufferedGraphicsManager::Current;
@@ -69,31 +69,39 @@ namespace Datatech {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(360, 154);
+			this->button1->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Century", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(472, 159);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(146, 105);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Agregar cantidad de empleado (60 a 120)";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(360, 289);
+			this->button2->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Century", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(472, 289);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(146, 105);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Salir del programa";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label1->Location = System::Drawing::Point(399, 93);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Black;
+			this->label1->Location = System::Drawing::Point(466, 99);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(58, 13);
+			this->label1->Size = System::Drawing::Size(162, 34);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"Data-Tech";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
@@ -102,10 +110,12 @@ namespace Datatech {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(867, 605);
+			this->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->ClientSize = System::Drawing::Size(1063, 605);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->ResumeLayout(false);
@@ -114,13 +124,16 @@ namespace Datatech {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		
 	}
 	
 	//empezar el programa
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 	//salir del programa
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Application::Exit();
 	}
 	};
 }
