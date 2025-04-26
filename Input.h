@@ -40,11 +40,17 @@ namespace Datatech {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -62,40 +68,38 @@ namespace Datatech {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(281, 213);
+			this->label1->Location = System::Drawing::Point(277, 213);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(362, 18);
+			this->label1->Size = System::Drawing::Size(342, 18);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Agrega el  número de empleados (entre 60 a 120): ";
+			this->label1->Text = L"Agrega el  número de empleados entre 60 y 120";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(365, 300);
+			this->label2->Location = System::Drawing::Point(359, 289);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(193, 18);
+			this->label2->Size = System::Drawing::Size(185, 18);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Agrega el número de días: ";
+			this->label2->Text = L"Agrega el número de días";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(386, 252);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
+			this->textBox1->Location = System::Drawing::Point(408, 234);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(148, 21);
+			this->textBox1->Size = System::Drawing::Size(100, 21);
 			this->textBox1->TabIndex = 2;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Input::textBox1_TextChanged);
+			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Input::TextBox1_KeyDown);
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(386, 340);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
+			this->textBox2->Location = System::Drawing::Point(408, 310);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(148, 21);
+			this->textBox2->Size = System::Drawing::Size(100, 21);
 			this->textBox2->TabIndex = 3;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &Input::textBox2_TextChanged);
+			this->textBox2->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Input::TextBox2_KeyDown);
 			// 
 			// Input
 			// 
@@ -111,41 +115,36 @@ namespace Datatech {
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Input";
 			this->Text = L"Input";
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Input::TextBox1_KeyDown);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-		// Validar que el texto ingresado sea un número
-		String^ inputText = textBox1->Text;
-		int number;
-		if (Int32::TryParse(inputText, number)){
-			if (number < 60 || number > 120){
-				MessageBox::Show("El número de empleados debe estar entre 60 y 120.");
-				textBox1->Clear();
+
+	private: System::Void TextBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyCode == Keys::Enter) {
+			try {
+				int numero = Convert::ToInt32(textBox1->Text);
+				if (numero < 60 || numero > 120) {
+					MessageBox::Show("Ingrese un numero entre 60 y 120");
+				}
+			}
+			catch (FormatException^) {
+				MessageBox::Show("Ingrese un numero valido");
 			}
 		}
-		else{
-			MessageBox::Show("Por favor, ingresa un número válido.");
-			textBox1->Clear();
+	}
+	private: System::Void TextBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyCode == Keys::Enter) {
+			try {
+				int dias = Convert::ToInt32(textBox2->Text);
+			}
+			catch (FormatException^) {
+				MessageBox::Show("Ingrese un numero valido");
+			}
 		}
 	}
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	// Validar que el texto ingresado sea un número
-	String^ inputText = textBox2->Text;
-	int number;
-	if (Int32::TryParse(inputText, number)){
-		if (number < 1){
-			MessageBox::Show("El número de días debe ser mayor a 0.");
-			textBox2->Clear();
-		}
-	}
-	else{
-		MessageBox::Show("Por favor, ingresa un número válido.");
-		textBox2->Clear();
-	}
-}
 };
 }
