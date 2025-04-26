@@ -65,7 +65,7 @@ namespace Datatech {
 			// 
 			this->panel1->Location = System::Drawing::Point(12, 96);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(843, 497);
+			this->panel1->Size = System::Drawing::Size(843, 444);
 			this->panel1->TabIndex = 0;
 			// 
 			// label1
