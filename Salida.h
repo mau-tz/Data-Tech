@@ -145,10 +145,13 @@ namespace Datatech {
 			this->Controls->Add(this->label1);
 			this->Name = L"Salida";
 			this->Text = L"Salida";
+			this->Load += gcnew System::EventHandler(this, &Salida::Salida_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void Salida_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

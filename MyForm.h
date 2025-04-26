@@ -1,7 +1,7 @@
 #pragma once
 #include "MyForm.h"
 #include "Matriz.h"
-
+#include "Input.h"
 namespace Datatech {
 
 	using namespace System;
@@ -76,7 +76,7 @@ namespace Datatech {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(146, 105);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Agregar cantidad de empleado (60 a 120)";
+			this->button1->Text = L"Empezar";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -124,12 +124,12 @@ namespace Datatech {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+		Input^ inputForm = gcnew Input();
+		inputForm->ShowDialog();
 	}
 	
 	//empezar el programa
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	}
 	//salir del programa
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
