@@ -7,3 +7,9 @@ C:\Users\mtera\source\repos\Data-Tech\Datatech\x64\Debug\Datatech.MyForm.resourc
 C:\Users\mtera\source\repos\Data-Tech\Datatech\x64\Debug\Datatech.vcxproj.GenerateResource.cache
 C:\Users\mtera\source\repos\Data-Tech\Datatech\x64\Debug\Datatech.Salida.resources
 C:\Users\mtera\source\repos\Data-Tech\Datatech\x64\Debug\Datatech.Input.resources
+C:\Users\Oscar\Documents\GitHub\Data-Tech\Datatech\x64\Debug\Datatech.vcxproj.AssemblyReference.cache
+C:\Users\Oscar\Documents\GitHub\Data-Tech\Datatech\x64\Debug\Datatech.Input.resources
+C:\Users\Oscar\Documents\GitHub\Data-Tech\Datatech\x64\Debug\Datatech.Matriz.resources
+C:\Users\Oscar\Documents\GitHub\Data-Tech\Datatech\x64\Debug\Datatech.MyForm.resources
+C:\Users\Oscar\Documents\GitHub\Data-Tech\Datatech\x64\Debug\Datatech.Salida.resources
+C:\Users\Oscar\Documents\GitHub\Data-Tech\Datatech\x64\Debug\Datatech.vcxproj.GenerateResource.cache
