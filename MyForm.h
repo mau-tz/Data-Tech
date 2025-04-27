@@ -47,7 +47,7 @@ namespace Datatech {
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Label^ label1;
+
 
 	private:
 		/// <summary>
@@ -62,64 +62,59 @@ namespace Datatech {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(389, 191);
+			this->button1->ForeColor = System::Drawing::Color::Transparent;
+			this->button1->Location = System::Drawing::Point(44, 196);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(146, 105);
+			this->button1->Size = System::Drawing::Size(198, 105);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Empezar";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Century", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(389, 321);
+			this->button2->Location = System::Drawing::Point(647, 196);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(146, 105);
+			this->button2->Size = System::Drawing::Size(189, 105);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"Salir del programa";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(383, 131);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(162, 34);
-			this->label1->TabIndex = 2;
-			this->label1->Text = L"Data-Tech";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(883, 591);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion

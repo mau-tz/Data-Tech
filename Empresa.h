@@ -17,7 +17,7 @@ private:
     float porcentajeObjetivo;
 
 public:
-    Empresa(int cantidad, float objetivo) : N(cantidad), porcentajeObjetivo(objetivo) {
+    Empresa(int cantidad) : N(cantidad) {
         matrizConexion = vector<vector<bool>>(N, vector<bool>(N, false));
         empleadosContagiados = vector<bool>(N, false);
     }
@@ -62,7 +62,7 @@ public:
 
         visitado[inicio] = true;
         empleadosContagiados[inicio] = true;
-        empleados[inicio].setContagiado(true); // Actualiza el estado del empleado
+        empleados[inicio].setContagiado(true);
         q.push(inicio);
 
         while (!q.empty()) {
@@ -72,7 +72,7 @@ public:
                 if (matrizConexion[actual][i] && !visitado[i]) {
                     visitado[i] = true;
                     empleadosContagiados[i] = true;
-                    empleados[i].setContagiado(true); // Actualiza el estado del empleado
+                    empleados[i].setContagiado(true); 
                     q.push(i);
                 }
             }
@@ -80,31 +80,12 @@ public:
     }
 
     void graficarMatrizConexion() {
-        cout << "Matriz de Conexión:" << endl;
+        cout << "Matriz de Conexion:" << endl;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 cout << matrizConexion[i][j] << " "; // Imprimir 0 o 1
             }
             cout << endl; // Nueva línea por fila
         }
-    }
-
-    // Graficar el estado de contagio de manera básica
-    void graficarEstadoContagio() {
-        cout << "Estado de Contagio: ";
-        for (int i = 0; i < N; i++) {
-            cout << empleadosContagiados[i] << " "; // Imprimir 0 o 1
-        }
-        cout << endl;
-    }
-
-    int calcularPorcentajeContagiados() {
-        int contagiados = 0;
-        for (int i = 0; i < N; i++) {
-            if (empleados[i].getContagiado()) {
-                contagiados++;
-            }
-        }
-        return (contagiados * 100) / N;
     }
 };

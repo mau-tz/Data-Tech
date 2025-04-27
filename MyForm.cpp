@@ -12,16 +12,14 @@ void main() {
 
     int n;
     do {
-        cout << "Ingrese el número de empleados (entre 60 y 120): ";
+        cout << "Ingrese el numero de empleados (entre 60 y 120): ";
         cin >> n;
         if (n < 60 || n > 120) {
-            cout << "Por favor, ingrese un valor válido entre 60 y 120." << endl;
+            cout << "Por favor, ingrese un valor valido entre 60 y 120." << endl;
         }
     } while (n < 60 || n > 120);
 
-    // Paso 2: Crear una empresa con un porcentaje objetivo arbitrario (por ejemplo, 50%)
-    float porcentajeObjetivo = 50.0; // Se puede ajustar según sea necesario
-    Empresa empresa(n, porcentajeObjetivo);
+    Empresa empresa(n);
 
     // Paso 3: Inicializar los empleados
     empresa.inicializarEmpleados(n);
@@ -43,15 +41,6 @@ void main() {
         }
     } while (empleadoInicial < 1 || empleadoInicial > n);
 
-    // Paso 7: Simular el contagio
-    empresa.simularContagio(empleadoInicial - 1); // Convertir a índice basado en 0
-
-    // Paso 8: Graficar el estado de contagio
-    cout << endl;
-    empresa.graficarEstadoContagio();
-
-    // Paso 9: Calcular y mostrar el porcentaje de empleados contagiados
-    int porcentajeContagiados = empresa.calcularPorcentajeContagiados();
-    cout << "Porcentaje de empleados contagiados: " << porcentajeContagiados << "%" << endl;
+    empresa.simularContagio(empleadoInicial - 1);
 
 }
