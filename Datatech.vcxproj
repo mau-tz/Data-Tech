@@ -115,18 +115,6 @@
   <ItemGroup>
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Empresa.h" />
-    <ClInclude Include="Input.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Matriz.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Salida.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp" />
@@ -137,20 +125,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Input.resx">
-      <DependentUpon>Input.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Matriz.resx">
-      <DependentUpon>Matriz.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Salida.resx">
-      <DependentUpon>Salida.h</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

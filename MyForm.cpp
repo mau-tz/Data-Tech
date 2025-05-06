@@ -1,4 +1,3 @@
-#include "MyForm.h"
 #include "Empresa.h"
 #include <iostream>
 using namespace std;
@@ -6,9 +5,6 @@ using namespace System;
 using namespace Windows::Forms;
 
 void main() {
-	//Application::SetCompatibleTextRenderingDefault(false);
-	//Application::EnableVisualStyles();
-	//Application::Run(gcnew Datatech::MyForm);
 	cout << "DATA TECH" << endl;
     int n;
     do {
